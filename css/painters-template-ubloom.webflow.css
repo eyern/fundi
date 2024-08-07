@@ -52,6 +52,7 @@
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/home.jpg');
   background-position: 0px 0px, 0px 0px;
   background-size: auto, auto;
+  object-fit: fill;
 }
 
 .section.home {
@@ -61,6 +62,7 @@
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)), url('../images/home.jpg');
   background-position: 0px 0px, 50% 100%;
   background-size: auto, cover;
+  object-fit: fill;
 }
 
 .heading {
@@ -72,7 +74,7 @@
   font-size: 60px;
   line-height: 60px;
   font-weight: 400;
-  text-transform: capitalize;
+  text-transform: camelcase;
 }
 
 .heading.page-heading {
@@ -90,11 +92,11 @@
   margin-bottom: 0px;
   font-family: Montserrat, sans-serif;
   color: #fff;
-  font-size: 14px;
+  font-size: 19px;
   line-height: 18px;
   font-weight: 600;
   letter-spacing: 1.5px;
-  text-transform: uppercase;
+  text-transform: camelcase;
 }
 
 .div-block {
@@ -2917,7 +2919,8 @@
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background-color: #2b2b2b;
+  background-color: #34AAFF
+  ;
 }
 
 .text-span-2 {
@@ -3746,6 +3749,7 @@
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: camelcase;
+  color: #34AAFF;
 }
 
 .text-block-28 {
@@ -5566,7 +5570,7 @@
   }
 
   .nav-menu {
-    background-color: #fff;
+    background-color: #000;
   }
 
   .div-block-3 {
@@ -7118,11 +7122,12 @@
   opacity: 0.9;
 }
 
-.brand-title .h5-title {
+.brand-title .heading-29 {
   text-transform: uppercase;
   font-weight: 500;
   letter-spacing: 2px;
   opacity: 0.7;
+  
 }
 .brands-box {
   padding: 0 30px;
