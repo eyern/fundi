@@ -61,7 +61,7 @@
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.48)), to(rgba(0, 0, 0, 0.48))), url('../images/home.jpg');
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)), url('../images/home.jpg');
   background-position: 0px 0px, 50% 100%;
-  background-size: auto, cover;
+  background-size: auto, auto;
   object-fit: fill;
 }
 
@@ -5893,7 +5893,7 @@
   }
 
   .menu-button.w--open {
-    background-color: #fff;
+    background-color: #000;
   }
 
   .image-6 {
@@ -7397,3 +7397,5 @@ a {
 }
 
 /* footer section end */
+
+
