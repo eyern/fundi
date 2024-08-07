@@ -5995,8 +5995,8 @@
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    background-color: #d8d8d8;
-    color: #000;
+    background-color: #000;
+    color: #fff;
     font-weight: 600;
   }
 
