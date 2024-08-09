@@ -59,19 +59,19 @@
   max-height: 850px;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.48)), to(rgba(0, 0, 0, 0.48))), url('../images/home.jpg');
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48)), url('../images/home.jpg');
-  background-position: 0px 0px, 50% 30%;
+  background-position: 0px 0px, 50% 60%;
   background-size: auto, cover;
 }
 
 .heading {
   width: auto;
-  margin-top: 20px;
+  margin-top: 60px;
   margin-bottom: 0px;
-  font-family: Lato, sans-serif;
+  font-family: Quicksand;
   color: #fff;
-  font-size: 60px;
-  line-height: 60px;
-  font-weight: 400;
+  font-size: 30px;
+  line-height: 100px;
+  font-weight: 600;
   text-transform: camelcase;
 }
 
@@ -85,16 +85,16 @@
 }
 
 .text-block {
-  width: 100%;
-  margin-top: 20px;
-  margin-bottom: 0px;
-  font-family: Montserrat, sans-serif;
+  width: auto;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-family: Quicksand;
   color: #fff;
-  font-size: px;
-  line-height: 18px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 1px;
   text-transform: camelcase;
+  font-weight: 300;
 }
 
 .div-block {
@@ -1193,7 +1193,7 @@
   width: 450px;
   margin-top: 0px;
   margin-bottom: 20px;
-  font-family: Montserrat, sans-serif;
+  font-family: Quicksand;
   color: #fff;
   font-size: 15px;
   line-height: 15px;
@@ -1519,10 +1519,10 @@
 
 .nav-link {
   padding-top: 20px;
-  font-family: Montserrat, sans-serif;
+  font-family: Quicksand;
   color: #fff;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 13px;
+  font-weight: 300;
   text-transform: camelcase;
 }
 
@@ -1532,7 +1532,7 @@
 
 .nav-link.w--current {
   color: #fff;
-  font-weight: 600;
+  font-weight: 300;
 }
 
 .nav-link.white {
@@ -2340,7 +2340,7 @@
 }
 
 .text-block-17 {
-  font-family: Montserrat, sans-serif;
+  font-family: Quicksand;
   color: #fff;
   font-size: 14px;
   font-weight: 700;
@@ -2892,7 +2892,7 @@
 }
 
 .text-block-20 {
-  font-family: Lato, sans-serif;
+  font-family: Quicksand;
   color: #fff;
   font-size: 30px;
   line-height: 50px;
@@ -3032,7 +3032,7 @@
 
 .text-block-22 {
   margin-left: 5px;
-  font-weight: 500;
+  font-weight: 400;
   text-decoration: none;
 }
 
@@ -3424,7 +3424,7 @@
 
 .heading-26 {
   margin-bottom: 30px;
-  font-family: Lato, sans-serif;
+  font-family: Quicksand;
   color: #1b1b1b;
   font-size: 45px;
   line-height: 55px;
@@ -3653,7 +3653,7 @@
 .heading-28 {
   margin-top: 0px;
   margin-bottom: 10px;
-  font-family: Lato, sans-serif;
+  font-family: Quicksand;
   font-size: 30px;
   line-height: 30px;
   font-weight: 900;
@@ -3739,6 +3739,7 @@
   margin-top: 0px;
   margin-bottom: 20px;
   font-size: 17px;
+  font-family: Quicksand;
   line-height: 20px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -3827,14 +3828,14 @@
   font-family: Quicksand;
   font-size: 14px;
   line-height: 20px;
-  font-weight: 400;
+  font-weight: 300;
   text-align: center;
   letter-spacing: 1px;
   color: #1b84b7;
 }
 
 .text-span-9 {
-  font-weight: 700;
+  font-weight: 300;
 }
 
 .text-span-9._2 {
@@ -3912,7 +3913,7 @@
 }
 
 .heading-31 {
-  font-family: Lato, sans-serif;
+  font-family: Quicksand;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -3927,7 +3928,7 @@
 
 .heading-32 {
   margin-top: 0px;
-  font-family: 'Playfair Display', sans-serif;
+  font-family: Quicksand;
   color: #1b84b7;
   font-size: 120px;
   line-height: 50px;
@@ -4003,11 +4004,11 @@
 .horizontal-quote-h4 {
   margin-top: 0px;
   margin-bottom: 0px;
-  font-family: Lato, sans-serif;
+  font-family: Quicksand;
   color: #151c34;
   font-size: 18px;
   line-height: 1.4;
-  font-weight: 500;
+  font-weight: 200;
   text-align: center;
 }
 
@@ -4170,9 +4171,9 @@
 }
 
 .heading-33 {
-  font-family: Lato, sans-serif;
+  font-family: Quicksand;
   font-size: 30px;
-  font-weight: 900;
+  font-weight: 500;
   text-align: center;
   text-transform: capitalize;
 }
@@ -7208,6 +7209,7 @@ a {
     margin-bottom: 0;
     margin-top: 0;
     text-transform: uppercase;
+    font-family: Quicksand;
 }
 .footer-menu-list {
     list-style: none;
@@ -7383,10 +7385,6 @@ a {
 
 
 
-
-
-
-
 /* Media Query For different screens */
 @media (min-width:320px) and (max-width:479px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
   .footer-content {
@@ -7450,5 +7448,14 @@ a {
   } */
 }
 
+h2{
+  text-align:center;
+  padding: 20px;
+  color: #34AAFF;
+  font-family: Quicksand;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
 
 
