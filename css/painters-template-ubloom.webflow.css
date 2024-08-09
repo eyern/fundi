@@ -261,7 +261,7 @@
 }
 
 .image {
-  height: 120px;
+  height: 50px;
   margin-top: 81px;
   margin-left: -24px;
   border-radius: 0px;
@@ -1523,7 +1523,7 @@
   color: #fff;
   font-size: 12px;
   font-weight: 600;
-  text-transform: uppercase;
+  text-transform: camelcase;
 }
 
 .nav-link:hover {
@@ -1873,7 +1873,7 @@
   -ms-flex-direction: column;
   flex-direction: column;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
+  -webkit-justify-content: right;
   -ms-flex-pack: center;
   justify-content: center;
 }
@@ -3041,7 +3041,7 @@
   color: #333;
   font-size: 13px;
   font-weight: 300;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .text-block-22._2.larger {
@@ -3600,8 +3600,8 @@
   margin-top: 20px;
   padding: 15px 20px;
   background-color: #1b84b7;
-  font-family: Montserrat, sans-serif;
-  font-weight: 600;
+  font-family: Quicksand;
+  font-weight: 100;
   letter-spacing: 1px;
 }
 
@@ -3789,13 +3789,16 @@
 .div-block-131 {
   position: relative;
   z-index: 2;
-  width: 80%;
-  height: 250px;
+  width: 60%;
+  height: 100px;
   max-width: 1280px;
-  margin-top: -82px;
-  padding: 60px;
+  margin-top: -52px;
+  padding: 20px;
   background-color: #fff;
   box-shadow: 0 0 9px -6px rgba(0, 0, 0, 0.68);
+  border-radius: 25px;
+  border: 2px solid #1b84b7;
+
 }
 
 .div-block-132 {
@@ -3821,12 +3824,12 @@
 
 .heading-30 {
   max-width: 170px;
-  font-family: Montserrat, sans-serif;
+  font-family: Quicksand;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
   text-align: center;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   color: #1b84b7;
 }
 
