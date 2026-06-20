@@ -11,7 +11,7 @@ body {
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
-    background-image: url('../front/image/bg_image/bg-4.jpg');
+    background-image: url('../front/image/bg_image/hero-bg.jpg');
     background-repeat: repeat-x;
     background-position: 0 50%;
     background-size: auto 100%;
