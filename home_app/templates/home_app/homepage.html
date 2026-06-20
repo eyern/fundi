@@ -1,0 +1,448 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Fundi | Handyman Services
+{% endblock title %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+{% endblock head %}
+
+{% block contents %}
+    <!-- Main container -->
+    <main class="container py-4 py-md-5">
+
+        {% if banners %}
+            <!-- Hero Section -->
+            <section class="mb-5 hero-section">
+                <div id="heroCarousel" class="modern-hero">
+                    <div class="hero-slides">
+                        {% for banner in banners %}
+                            <div class="hero-slide {% if forloop.first %}active{% endif %}">
+                                <a href="{{ banner.link }}" class="d-block">
+                                    <img src="{{ banner.image.url }}"
+                                         alt="{{ banner.title }}"
+                                         class="hero-banner"
+                                         loading="eager"> <!-- لود سریع برای اولین تصویر -->
+                                    <div class="modern-caption">
+                                        <span class="badge bg-primary mb-2">New Arrival</span>
+                                        <h2>{{ banner.description }}</h2>
+                                        <p>{{ banner.small_description }}</p>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <button id="heroPrev" class="modern-control prev" aria-label="Previous slide">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button id="heroNext" class="modern-control next" aria-label="Next slide">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+
+                    <div id="heroIndicators" class="modern-indicators"></div>
+                </div>
+            </section>
+        {% endif %}
+
+        <!-- Discounted Products -->
+        <section class="mb-5">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h3 class="section-title mb-1">Top Selling</h3>
+                    <p class="text-muted">We also offer installations for our products</p>
+                </div>
+
+                <div class="d-flex align-items-center gap-2">
+                    <a href="{% url 'product_app:product_list' pk=1 %}"
+                       class="view-all-link">View All <i class="bi bi-arrow-right"></i></a>
+
+                    <div class="scroll-controls">
+                        <button type="button"
+                                class="btn btn-light btn-scroll-modern"
+                                onclick="scrollRow('discountProducts', -1)"
+                                aria-label="Scroll left">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
+                        <button type="button"
+                                class="btn btn-light btn-scroll-modern"
+                                onclick="scrollRow('discountProducts', 1)"
+                                aria-label="Scroll right">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="discountProducts"
+                 class="products-row"
+                 aria-label="discount products">
+                {% if discounted_products %}
+                    {% for product in products %}
+                        {% if product.final_price != product.price %}
+                            <div class="card product-card modern-card">
+                                <span class="badge discount-badge-modern">Discounted</span>
+                                <a class="card-link text-decoration-none"
+                                   href="{% url 'product_app:product_details' pk=product.id %}">
+                                    <img class="card-img-top modern-img"
+                                         src="{{ product.image.url }}"
+                                         alt="{{ product.name }}"
+                                         loading="lazy">
+                                    <div class="card-body">
+                                        <h6 class="product-title">{{ product.name }}</h6>
+                                        <p class="product-desc">{{ product.description|truncatechars:40 }}</p>
+                                        <div class="card-price-row">
+                                            <div>
+                                                <small class="old-price me-2">KSh {{ product.price }}</small>
+                                                <span class="final-price">KSh {{ product.final_price }}</span>
+                                            </div>
+                                            <button class="btn btn-primary btn-sm modern-btn"
+                                                    type="button"
+                                                    onclick="location.href='{% url 'product_app:product_details' pk=product.id %}'">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    <p class="text-muted w-100 text-center py-5">No discounted products available</p>
+                {% endif %}
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+  <section id="about">
+    <div class="abt-grid">
+      <div class="rv-l">
+        <div style="position:relative;display:inline-block;width:100%">
+          <img class="abt-img" src="{% static 'img/logo2.png' %}" alt="Garage Zero Logo" loading="lazy" />
+        </div>
+        <div class="abt-stats">
+          <div class="as">
+            <div class="as-n">10+</div>
+            <div class="as-l">Years in industry</div>
+          </div>
+          <div class="as">
+            <div class="as-n">50+</div>
+            <div class="as-l">Our Team</div>
+          </div>
+          <div class="as">
+            <div class="as-n">100+</div>
+            <div class="as-l">Our Partners</div>
+          </div>
+        </div>
+      </div>
+      <div class="rv-r">
+        <h2 class="sh">About <span>Fundi</span><br></h2>
+        <div class="abt-text">
+          <p>Fundi bridges the gap between aesthetic vision and reliable property maintenance. We serve clients
+             in Nairobi and surrounding areas. We provide end-to-end interior transformations, eliminating the
+              stress of coordinating between separate designers and contractors.</p>
+              
+          <p> Our in-house team includes licensed professionals, creative designers, and certified 
+            handymen who turn design concepts into beautiful, functional realities.
+          </p>
+        </div>
+        <div class="abt-addr">
+          <div class="aa-lbl">Get in Touch</div>
+          <div class="aa-txt">
+            📍 Call us today!
+            📞 <a href="tel:+254796599420">0796-599-420</a> &nbsp;·&nbsp;
+            <br>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <br><br><br>
+
+        <section class="services-section" id="services">
+            <div class="services-container">
+        
+              <!-- Section Header -->
+              <div>
+                <h3 class="section-title mb-1">What we do @Fundi</h3>
+            </div>
+            <br><br>
+        
+              <!-- Services Grid Box -->
+              <div class="services-grid">
+        
+                <!-- Service Card 2 -->
+                <div class="service-card">
+                  <div class="service-image-box">
+                    <img src="{% static 'img/interior.png' %}" alt="Data Analytics & Strategy">
+                  </div>
+                  <div class="service-content">
+                    <h3>Interior</h3>
+                    <p>Space Planning, Lighting Design, Material Selection, Furniture and Furnishings, Color Schemes, 
+                        Kitchen and Bathroom Design, Renovation and Remodeling, Interior Styling.
+                    </p>
+                  </div>
+                </div>
+        
+                <!-- Service Card 1 -->
+                <div class="service-card">
+                  <div class="service-image-box">
+                    <img src="{% static 'img/renovations.jpg' %}" alt="Garage Zero">
+                  </div>
+                  <div class="service-content">
+                    <h3>House & Office Renovation</h3>
+                    <p>We're your Go-To Experts for all Home And Office improvements. Painting And Repairs To 
+                        Cleaning and Installations. </p>
+                  </div>
+                </div>
+        
+        
+                <!-- Service Card 3 -->
+                <div class="service-card">
+                  <div class="service-image-box">
+                    <img src="{% static 'img/kitchen.jpg' %}" alt="Garage Zero">
+                  </div>
+                  <div class="service-content">
+                    <h3>Kitchen Appliances Repair</h3>
+                    <p>Fundi also offers Kitchen Appliances Repair Services in Nairobi Kenya. Washing machines, Fridge, Cooker,
+                         Oven, Dishwasher, Tumble Dryer, Freezer repair services etc.</p>
+                  </div>
+                </div>
+        
+                <!-- Service Card 3 -->
+                <div class="service-card">
+                  <div class="service-image-box">
+                    <img src="{% static 'img/cctv.jpg' %}" alt="Garage Zero">
+                  </div>
+                  <div class="service-content">
+                    <h3>Installations</h3>
+                    <p>
+                        CCTV Installations, Tv Mounting, Electrical, Alarm Systems, Dry Wall Mounting
+                    </p>
+                  </div>
+                </div>
+        
+                <!-- Service Card 3 -->
+                <div class="service-card">
+                  <div class="service-image-box">
+                    <img src="{% static 'img/plumbing.jpg' %}" alt="Garage Zero">
+                  </div>
+                  <div class="service-content">
+                    <h3>Carpentry & Plumbing</h3>
+                    <p>Toilet Repair, Drain Cleaning, Plumbing Installations, Capentry Services.</p>
+                  </div>
+                </div> 
+        
+              </div>
+            </div>
+          </section>
+          <br><br><br>
+
+
+          <div class="partners-slider">
+            <div class="partners-track">
+              <!-- Set 1 -->
+              <div class="partner-logo"><img src="{% static 'img/brands/b1.png' %}" width="50" height="50" alt="Partner"></div>
+              <!-- Set 2 (Identical to Set 1) -->
+              <div class="partner-logo"><img src="{% static 'img/brands/b2.png' %}" width="50" height="50" alt="Partner"></div>
+              <!-- Set 2 (Identical to Set 1) -->
+              <div class="partner-logo"><img src="{% static 'img/brands/b3.png' %}" width="50" height="50" alt="Partner"></div>
+              <!-- Set 2 (Identical to Set 1) -->
+              <div class="partner-logo"><img src="{% static 'img/brands/b4.png' %}" width="50" height="50" alt="Partner"></div>
+              <!-- Set 2 (Identical to Set 1) -->
+              <div class="partner-logo"><img src="{% static 'img/brands/b5.png' %}" width="50" height="50" alt="Partner"></div>
+              <!-- Set 2 (Identical to Set 1) -->
+              <div class="partner-logo"><img src="{% static 'img/brands/b6.png' %}" width="50" height="50"  alt="Partner"></div>
+              <!-- Set 2 (Identical to Set 1) -->
+              <div class="partner-logo"><img src="{% static 'img/brands/b7.png' %}" width="50" height="50" alt="Partner"></div>
+              <!-- Set 2 (Identical to Set 1) -->
+              <div class="partner-logo"><img src="{% static 'img/brands/b8.png' %}" width="50" height="50" alt="Partner"></div>
+              <!-- Set 2 (Identical to Set 1) -->
+              <div class="partner-logo"><img src="{% static 'img/brands/b9.png' %}" width="50" height="50" alt="Partner"></div>
+              <!-- Set 2 (Identical to Set 1) -->
+              <div class="partner-logo"><img src="{% static 'img/brands/b10.png' %}" width="50" height="50" alt="Partner"></div>
+              <!-- Set 2 (Identical to Set 1) -->
+              <div class="partner-logo"><img src="{% static 'img/brands/b12.png' %}" width="50" height="50" alt="Partner"></div>
+
+
+            </div>
+          </div>
+
+          <br><br><br>
+          
+
+            
+        
+
+        <!-- New Arrivals -->
+        <section class="mb-5">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h3 class="section-title mb-1">Featured</h3>
+                </div>
+
+                <div class="d-flex align-items-center gap-2">
+                    <a href="{% url 'product_app:product_list' pk=0 %}"
+                       class="view-all-link">View All <i class="bi bi-arrow-right"></i></a>
+
+                    <div class="scroll-controls">
+                        <button type="button"
+                                class="btn btn-light btn-scroll-modern"
+                                onclick="scrollRow('newProducts', -1)"
+                                aria-label="Scroll left">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
+                        <button type="button"
+                                class="btn btn-light btn-scroll-modern"
+                                onclick="scrollRow('newProducts', 1)"
+                                aria-label="Scroll right">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="newProducts"
+                 class="products-row"
+                 aria-label="new products">
+                {% for product in new_products %}
+                    <div class="card product-card modern-card">
+                        {% if product.final_price != product.price %}
+                            <span class="badge discount-badge-modern">-{{ product.discount_percent }}%</span>
+                        {% endif %}
+                        <a class="card-link text-decoration-none"
+                           href="{% url 'product_app:product_details' pk=product.id %}">
+                            <img class="card-img-top modern-img"
+                                 src="{{ product.image.url }}"
+                                 alt="{{ product.name }}"
+                                 loading="lazy">
+                            <div class="card-body">
+                                <h6 class="product-title">{{ product.name }}</h6>
+                                <p class="product-desc">{{ product.description|truncatechars:40 }}</p>
+                                <div class="card-price-row">
+                                    {% if product.final_price != product.price %}
+                                        <div>
+                                            <small class="old-price me-2">KSh{{ product.price }}</small>
+                                            <span class="final-price">KSh{{ product.final_price }}</span>
+                                        </div>
+                                    {% else %}
+                                        <div>
+                                            <span class="final-price">KSh{{ product.price }}</span>
+                                        </div>
+                                    {% endif %}
+                                    <button class="btn btn-primary btn-sm modern-btn"
+                                            type="button"
+                                            onclick="location.href='{% url 'product_app:product_details' pk=product.id %}'">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% empty %}
+                    <p class="text-muted w-100 text-center py-5">No new products available</p>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+              <div class="row">
+                <div>
+                    <h3 class="section-title mb-1">What People Say About Fundi</h3>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="testimonials-content">
+                  <div class="testimonials-box">
+                    <div class="testimonials-img">
+                      <div class="test-img">
+                        <img src="{% static 'img/rev-1.jpg' %}" />
+                      </div>
+                      <div class="testimonials-text">
+                        <p>From the quote to the final touch, I was incredibly impressed with how pleasant and professional things were handled. .</p>
+                        <h6>Allan M</h6>
+                        <p></p>
+                      </div>
+                    </div>
+                    <div class="testimonials-img">
+                      <div class="test-img">
+                        <img src="{% static 'img/rev-1.jpg' %}" />
+                      </div>
+                      <div class="testimonials-text">
+                        <p>They arrived on time, communicated clearly, and completed the work within the estimated timeframe</p>
+                        <h6>Barnaba K</h6>
+                        <p></p>
+                      </div>
+                    </div>
+                    <div class="testimonials-img">
+                      <div class="test-img">
+                        <img src="{% static 'img/rev-1.jpg' %}" />
+                      </div>
+                      <div class="testimonials-text">
+                        <p>They installed a tricky wooden closet system, finding creative workarounds for missing manufacturer parts on the spot. Highly recommended❤️</p>
+                        <h6>Melody </h6>
+                        <p></p>
+                      </div>
+                    </div>
+                    <div class="testimonials-img">
+                      <div class="test-img">
+                        <img src="{% static 'img/rev-1.jpg' %}" />
+                      </div>
+                      <div class="testimonials-text">
+                        <p>Professional and friendly, it's evident they take pride in their work and even helped talk through options for future projects. I’ll definitely be calling again!</p>
+                        <h6>John. C</h6>
+                        <p></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slider"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        <!-- Features Section -->
+        <section class="features-section py-5">
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="feature-card">
+                        <i class="bi bi-star"></i>
+                        <h6>Quality Craftsmanship</h6>
+                        <p>We believe that superior craftsmanship is the foundation of a well-designed space.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="feature-card">
+                        <i class="bi bi-shield-check"></i>
+                        <h6>Secure Payment</h6>
+                        <p>We accept lipa na Mpesa & all major trusted payment gateways. </p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="feature-card">
+                        <i class="bi bi-award"></i>
+                        <h6>Client Satisfaction</h6>
+                        <p>We are committed to ensuring that 
+                            every client has a positive and rewarding experience.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="feature-card">
+                        <i class="bi bi-headset"></i>
+                        <h6>24/7 Support</h6>
+                        <p>Get in touch with us today. Call/whatsapp ☎️ 0796-599-420</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="{% static 'js/homepage.js' %}"></script>
+{% endblock contents %}
