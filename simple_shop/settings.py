@@ -98,8 +98,8 @@ DATABASES = {
         'NAME': 'railway',
         'USER': 'postgres',
         'PASSWORD': os.environ['DB_PASSWORD'],
-        'HOST': 'reseau.proxy.rlwy.net',
-        'PORT': '50400',
+        'HOST': 'turntable.proxy.rlwy.net',
+        'PORT': '37455',
 
     }
 }
